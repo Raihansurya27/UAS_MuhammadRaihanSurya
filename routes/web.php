@@ -31,7 +31,7 @@ use App\Http\Controllers\BookingsController;
 //     return view('home');
 // });
 
-Route::get('/home',[HomeController::class,'home']);
+Route::get('/',[HomeController::class,'home']);
 Route::get('dashboard',function(){
     return view('dashboard.index');
 })->middleware('auth');
