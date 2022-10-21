@@ -32,9 +32,11 @@ use App\Http\Controllers\BookingsController;
 // });
 
 Route::get('/',[HomeController::class,'home']);
-Route::get('dashboard',function(){
+Route::get('/dashboard',function(){
     return view('dashboard.index');
 })->middleware('auth');
+
+// Route::get('/dashboard',[DashboardController::class,'index']);
 Route::get('/register',[LoginController::class,'register'])->name('register');
 Route::post('/register',[LoginController::class,'registerStore']);
 Route::get('/login',[LoginController::class,'login'])->name('login')->middleware('guest');
